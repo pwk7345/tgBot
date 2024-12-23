@@ -29,3 +29,10 @@ async def category(callback: CallbackQuery):
     await callback.answer('Вы выбрали товар')
     await callback.message.answer(f'Название: {item_data.name}\nОписание: {item_data.description}\nЦена: {item_data.price}RUB')
 
+@router.message(F.text == 'О нас')
+async def about_us(message: Message):
+    await message.answer('Мини-магазин в Пятом Новокольцовском общежитии:) Бот не доведён до идеала, но общий смысл и функции воспроизведены и ясны.')
+
+@router.message(F.text == 'Контакты')
+async def contacts(message: Message):
+    await message.answer('+79994581329 , тбанк/сбер ')
